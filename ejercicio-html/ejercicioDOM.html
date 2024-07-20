@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>División y Resto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <input type="number" id="userInput" placeholder="Ingresa un número">
+    <button onclick="findNumbers()">Mostrar números</button>
+
+    <div class="div-resultado" id="resultado">respuesta</div>
+
+    <script>
+        function findNumbers() {
+            const userInput = document.getElementById('userInput').value;
+            const numero = parseInt(userInput);
+            let resultado = '';
+
+            for (let i = 1; i < numero; i++) {
+                if (i % 3 === 2) {
+                    resultado += `${i}, `;
+                }
+            }
+
+            // Quitar la última coma y espacio
+            resultado = `respuesta ${resultado.slice(0, -2)}`;
+
+            // Mostrar el resultado
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+
+</body>
+</html>

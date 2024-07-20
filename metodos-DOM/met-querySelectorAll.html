@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+
+    <!-- Seleccionar Todos los Párrafos (<p>): -->
+
+    <p>Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <p>Párrafo 3</p>
+    <script>
+        const paragraphs = document.querySelectorAll('p');
+        console.log(paragraphs); // NodeList [p, p, p]
+    </script>
+</body>
+</html>
+
+//------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+
+    <!-- Seleccionar Elementos con una Clase Específica: -->
+
+    <div class="example">Div 1</div>
+    <div class="example">Div 2</div>
+    <div class="example">Div 3</div>
+    <script>
+        const divs = document.querySelectorAll('.example');
+        console.log(divs); // NodeList [div.example, div.example, div.example]
+    </script>
+</body>
+</html>
+
+//-------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+
+    <!-- Seleccionar Elementos con un Atributo Específico: -->
+
+    <input type="text" placeholder="Campo de texto">
+    <input type="checkbox" checked>
+    <input type="radio" checked>
+    <script>
+        const inputsChecked = document.querySelectorAll('input[checked]');
+        console.log(inputsChecked); // NodeList [input[type="checkbox"], input[type="radio"]]
+    </script>
+</body>
+</html>
+
+//----------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+
+    <!-- Seleccionar Elementos Anidados: --> 
+
+    <div class="container">
+        <span>Span 1</span>
+        <span>Span 2</span>
+    </div>
+    <div class="container">
+        <span>Span 3</span>
+    </div>
+    <script>
+        const spansInContainers = document.querySelectorAll('.container span');
+        console.log(spansInContainers); // NodeList [span, span, span]
+    </script>
+</body>
+</html>
+
+//------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+
+    <!-- Cambiar el Texto de Todos los Párrafos: -->
+
+    <p>Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <p>Párrafo 3</p>
+
+    cambia los parrafo a texto nuevo quedando nuevo texto1, nuevo texto2, nuevo texto3
+    <script>
+        const paragraphs1 = document.querySelectorAll('p');
+        paragraphs.forEach((paragraph1, index) => {
+            paragraph1.textContent = `Nuevo Texto ${index + 1}`;
+        });
+    </script>
+
+</body>
+</html>
+
+//--------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+    <div class="example">Div 1</div>
+    <div class="example">Div 2</div>
+    <div class="example">Div 3</div>
+
+    <!-- Cambiar el Color de Fondo de Elementos con una Clase Específica: -->
+    <script>
+        const divs1 = document.querySelectorAll('.example');
+        divs1.forEach(div => {
+            div.style.backgroundColor = 'yellow';
+        });
+    </script>
+</body>
+</html>
+
+//-------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+    <button>Botón 1</button>
+    <button>Botón 2</button>
+    <button>Botón 3</button>
+
+    <!-- Agregar un Evento de Click a Todos los Botones: -->
+
+    <script>
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Botón clickeado!');
+            });
+        });
+    </script>
+</body>
+</html>

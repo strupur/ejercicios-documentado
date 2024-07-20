@@ -1,0 +1,37 @@
+<!-- El método closest en JavaScript se utiliza para encontrar el elemento ascendente más cercano que coincida con un selector CSS dado. Si el propio elemento desde el que se llama el método coincide con el selector, se devuelve a sí mismo. Si no se encuentra ningún elemento que coincida, se devuelve null. -->
+
+<!-- Queremos encontrar el elemento con la clase .parent que es el ascendente más cercano del elemento con el ID myElement. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closest Example</title>
+    <style>
+        .grandparent { background-color: lightblue; padding: 20px; }
+        .parent { background-color: lightgreen; padding: 20px; }
+        .child { background-color: lightcoral; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child" id="myElement">
+                Click me
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('myElement').addEventListener('click', function() {
+            const parentElement = this.closest('.parent');
+            if (parentElement) {
+                parentElement.style.backgroundColor = 'yellow';
+            }
+        });
+    </script>
+</body>
+</html>

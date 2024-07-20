@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin: 2px;
+        }
+
+        .btn-edit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-delete {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .contenedor-main {
+            background-color: #dbe6e8;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            background-color: #8f8cf1;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .contenedor-crear {
+            background-color: #dbe6e8;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .form-container-crear {
+            background-color: #8cf1b6;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .btn-crear {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Lista de Productos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody">
+            <tr>
+                <td class="product-name">Producto 1</td>
+                <td class="product-price">$100</td>
+                <td>
+                    <button class="btn btn-edit">Editar</button>
+                    <button class="btn btn-delete">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-name">Producto 2</td>
+                <td class="product-price">$200</td>
+                <td>
+                    <button class="btn btn-edit">Editar</button>
+                    <button class="btn btn-delete">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-name">Producto 3</td>
+                <td class="product-price">$300</td>
+                <td>
+                    <button class="btn btn-edit">Editar</button>
+                    <button class="btn btn-delete">Eliminar</button>
+                </td>
+            </tr>
+            <!-- Puedes añadir más filas según sea necesario -->
+        </tbody>
+    </table>
+
+    <div class="contenedor-main">
+        <h1>Modificar</h1>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="editProductName" class="form-label">Ingrese nombre:</label>
+                <input type="text" id="editProductName" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="editProductPrice" class="form-label">Ingrese precio:</label>
+                <input type="text" id="editProductPrice" class="form-input">
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor-crear">
+        <h1>Crear Producto</h1>
+        <div class="form-container-crear">
+            <div class="form-group">
+                <label for="newProductName" class="form-label">Ingrese nombre:</label>
+                <input type="text" id="newProductName" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="newProductPrice" class="form-label">Ingrese precio:</label>
+                <input type="text" id="newProductPrice" class="form-input">
+            </div>
+            <button class="btn-crear">Crear</button>
+        </div>
+    </div>
+
+    <script>
+        // SCRIPT DE ELIMINACIÓN 
+        document.querySelectorAll('.btn-delete').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = button.closest('tr');
+                row.remove();
+            });
+        });
+
+        // SCRIPT DE EDICIÓN
+        document.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = button.closest('tr');
+                const productName = row.querySelector('.product-name');
+                const productPrice = row.querySelector('.product-price');
+                
+                const newName = document.getElementById('editProductName').value;
+                const newPrice = document.getElementById('editProductPrice').value;
+
+                if (newName && newPrice) {
+                    productName.textContent = newName;
+                    productPrice.textContent = newPrice;
+                }
+            });
+        });
+
+        // SCRIPT DE CREACIÓN
+        document.querySelector('.btn-crear').addEventListener('click', function() {
+            const name = document.getElementById('newProductName').value;
+            const price = document.getElementById('newProductPrice').value;
+
+            if (name && price) {
+                const tableBody = document.getElementById('productTableBody');
+
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td class="product-name">${name}</td>
+                    <td class="product-price">${price}</td>
+                    <td>
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </td>
+                `;
+
+                tableBody.appendChild(newRow);
+
+                // Limpiar campos de entrada después de añadir
+                document.getElementById('newProductName').value = '';
+                document.getElementById('newProductPrice').value = '';
+
+                // Reasignar eventos para los nuevos botones
+                newRow.querySelector('.btn-delete').addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    row.remove();
+                });
+
+                newRow.querySelector('.btn-edit').addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    const productName = row.querySelector('.product-name');
+                    const productPrice = row.querySelector('.product-price');
+                    
+                    const newName = document.getElementById('editProductName').value;
+                    const newPrice = document.getElementById('editProductPrice').value;
+
+                    if (newName && newPrice) {
+                        productName.textContent = newName;
+                        productPrice.textContent = newPrice;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

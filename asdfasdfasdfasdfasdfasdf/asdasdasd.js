@@ -1,2 +1,2 @@
-let gatito = 89;
+let gatito = 69;
 console.log(gatito);

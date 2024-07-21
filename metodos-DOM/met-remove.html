@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de remove</title>
+</head>
+<body>
+    <div id="miDiv">Este es un div que será eliminado</div>
+    <button id="miBoton">Eliminar div</button>
+
+    <script>
+
+// Eliminar un elemento específico del DOM
+
+        document.getElementById('miBoton').addEventListener('click', function() {
+            const div = document.getElementById('miDiv');
+            div.remove();
+        });
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de remove</title>
+</head>
+<body>
+    <ul id="miLista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <button id="miBoton">Eliminar todos los elementos</button>
+
+    <script>
+
+// Eliminar múltiples elementos del DOM
+
+        document.getElementById('miBoton').addEventListener('click', function() {
+            const items = document.querySelectorAll('#miLista li');
+            items.forEach(item => item.remove());
+        });
+    </script>
+</body>
+</html>

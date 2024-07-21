@@ -1,27 +1,11 @@
-let array = [3, 1, 4, 1, 5, 9];
 
-// Encontrar el valor mínimo
-let minValue = Math.min(...array);
-console.log(`El valor mínimo es: ${minValue}`);
 
-// Encontrar el índice del valor mínimo
-let minIndex = array.indexOf(minValue);
-console.log(`El índice del valor mínimo es: ${minIndex}`);
 
-// El valor mínimo es: 1
-// ejercicio.js:9 El índice del valor mínimo es: 1
 
-//-------------------------------
 
-let array1 = [3, 1, 4, 1, 5, 9];
 
-// Encontrar el valor máximo
-let maxValue = Math.max(...array1);
-console.log(`El valor máximo es: ${maxValue}`);
+// Escribe una función que determina si la letra que se le pasa como argumento se encuentra contenida dentro de un array de letras que se le pasa como segundo argumento.
 
-// Encontrar el índice del valor máximo
-let maxIndex = array1.indexOf(maxValue);
-console.log(`El índice del valor máximo es: ${maxIndex}`);
+// Se trata de resolverlo sin usar métodos del objeto array, solo el dato tipo array.
 
-// El valor máximo es: 9
-// ejercicio.js:24 El índice del valor máximo es: 5
+// existeEn('a', ['w','e','r','i']) devolverá false porque la letra 'a' no existe en el array

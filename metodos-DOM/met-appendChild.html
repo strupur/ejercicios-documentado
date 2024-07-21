@@ -1,0 +1,67 @@
+En todos estos ejemplos, el método appendChild se utiliza para agregar un nuevo nodo (elemento) como hijo de un elemento existente en el DOM. Es una manera efectiva de construir o modificar la estructura de un documento HTML dinámicamente usando JavaScript
+
+<!-- Agregar una imagen a un div -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de appendChild con imagen</title>
+</head>
+<body>
+    <div id="contenedor-imagen"></div>
+
+    <script>
+        // Seleccionamos el contenedor para la imagen
+        const contenedorImagen = document.getElementById('contenedor-imagen');
+
+        // Creamos un nuevo elemento de imagen
+        const nuevaImagen = document.createElement('img');
+
+        // Establecemos el atributo src de la imagen
+        nuevaImagen.src = 'https://via.placeholder.com/150';
+
+        // Establecemos el atributo alt de la imagen
+        nuevaImagen.alt = 'Imagen de ejemplo';
+
+        // Añadimos la imagen al contenedor
+        contenedorImagen.appendChild(nuevaImagen);
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de anidamiento con appendChild</title>
+</head>
+<body>
+    <div id="contenedor-principal"></div>
+
+    <script>
+        // Seleccionamos el contenedor principal
+        const contenedorPrincipal = document.getElementById('contenedor-principal');
+
+        // Creamos un nuevo div
+        const nuevoDiv = document.createElement('div');
+
+        // Creamos un nuevo párrafo
+        const nuevoParrafo = document.createElement('p');
+
+        // Añadimos texto al párrafo
+        nuevoParrafo.textContent = 'Párrafo dentro de un div.';
+
+        // Añadimos el párrafo al nuevo div
+        nuevoDiv.appendChild(nuevoParrafo);
+
+        // Añadimos el nuevo div al contenedor principal
+        contenedorPrincipal.appendChild(nuevoDiv);
+    </script>
+</body>
+</html>
+

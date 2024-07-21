@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de createElement</title>
+</head>
+<body>
+    <div id="contenedor"></div>
+
+    <script>
+        // Crear un nuevo párrafo
+        const nuevoParrafo = document.createElement('p');
+        // Añadir texto al párrafo
+        nuevoParrafo.textContent = 'Este es un nuevo párrafo creado con createElement.';
+        // Añadir el párrafo al contenedor
+        document.getElementById('contenedor').appendChild(nuevoParrafo);
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de createElement</title>
+</head>
+<body>
+    <div id="contenedor"></div>
+
+    <script>
+        // Crear un nuevo botón
+        const nuevoBoton = document.createElement('button');
+        // Añadir texto al botón
+        nuevoBoton.textContent = 'Haz clic aquí';
+        // Añadir un evento al botón
+        nuevoBoton.addEventListener('click', function() {
+            alert('¡Botón clickeado!');
+        });
+        // Añadir el botón al contenedor
+        document.getElementById('contenedor').appendChild(nuevoBoton);
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de createElement</title>
+</head>
+<body>
+    <div id="contenedor"></div>
+
+    <script>
+        // Crear una lista desordenada
+        const lista = document.createElement('ul');
+
+        // Crear varios elementos de lista y añadirlos a la lista
+        for (let i = 1; i <= 3; i++) {
+            const item = document.createElement('li');
+            item.textContent = `Elemento ${i}`;
+            lista.appendChild(item);
+        }
+
+        // Añadir la lista al contenedor
+        document.getElementById('contenedor').appendChild(lista);
+    </script>
+</body>
+</html>
+

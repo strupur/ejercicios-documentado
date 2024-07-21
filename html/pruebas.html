@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Closest Example</title>
-    <style>
-        .grandparent { background-color: lightblue; padding: 20px; }
-        .parent { background-color: lightgreen; padding: 20px; }
-        .child { background-color: lightcoral; padding: 20px; }
-    </style>
+    <title>Ejemplo de Select</title>
 </head>
 <body>
-    <div class="grandparent">
-        <div class="parent">
-            <div class="child" id="myElement">
-                Click me
-            </div>
-        </div>
-    </div>
+    <!-- Select con opciones -->
+    <select id="miSelect">
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+    </select>
+    <!-- Botón para mostrar el valor seleccionado del select -->
+    <button onclick="mostrarValor()">Mostrar Valor</button>
+    <!-- Botón para cambiar la opción seleccionada del select -->
+    <button onclick="cambiarValor()">Cambiar Valor</button>
 
     <script>
-        document.getElementById('myElement').addEventListener('click', function() {
-            const parentElement = this.closest('.parent');
-            if (parentElement) {
-                parentElement.style.backgroundColor = 'yellow';
-            }
-        });
+        function mostrarValor() {
+            // Selecciona el select por su id
+            const select = document.getElementById('miSelect');
+            // Muestra una alerta con el valor seleccionado del select
+            alert(select.value);
+        }
+
+        function cambiarValor() {
+            // Selecciona el select por su id
+            const select = document.getElementById('miSelect');
+            // Cambia la opción seleccionada del select
+            select.value = "opcion3";
+        }
     </script>
 </body>
-</html>https://chatgpt.com/c/f4288c96-60a6-417d-a16b-a15ef3edee1f
+</html>

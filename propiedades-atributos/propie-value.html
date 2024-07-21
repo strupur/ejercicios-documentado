@@ -1,0 +1,144 @@
+La propiedad value es fundamental para trabajar con elementos de formulario en el DOM. Permite acceder al valor actual de un elemento o establecer un nuevo valor, facilitando la manipulación y validación de datos de entrada del usuario.
+
+<!-- Obtener el valor de un campo de texto -->
+
+<!-- cuando escribo algo en un imput lo mandara a un alert -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Obtener Valor</title>
+</head>
+<body>
+    <!-- Campo de texto con un valor inicial -->
+    <input type="text" id="miInput" value="Hola, Mundo!">
+    <!-- Botón para obtener el valor del campo de texto -->
+    <button onclick="obtenerValor()">Obtener Valor</button>
+
+    <script>
+        function obtenerValor() {
+            // Selecciona el campo de texto por su id
+            const input = document.getElementById('miInput');
+            // Muestra una alerta con el valor del campo de texto
+            alert(input.value);
+        }
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!-- Establecer el valor de un campo de texto -->
+
+siempre que pulse el boton en el imput me saldra un mensaje escrito: nuevo valor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Establecer Valor</title>
+</head>
+<body>
+    <!-- Campo de texto con un valor inicial -->
+    <input type="text" id="miInput" value="Hola, Mundo!">
+    <!-- Botón para establecer un nuevo valor al campo de texto -->
+    <button onclick="establecerValor()">Establecer Valor</button>
+
+    <script>
+        function establecerValor() {
+            // Selecciona el campo de texto por su id
+            const input = document.getElementById('miInput');
+            // Establece un nuevo valor al campo de texto
+            input.value = "Nuevo Valor";
+        }
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!-- Obtener y establecer el valor de un textarea -->
+
+<!-- un campo de escribir(textarea) con dos botones si pulso el btn "mostrar valor" me imprime un alert con lo que estaba escrito en el campo, y si pulso el 2° btn "cambiar valor" en el campo sale escrito texto nuevo. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Textarea</title>
+</head>
+<body>
+    <!-- Textarea con un texto inicial -->
+    <textarea id="miTextarea">Texto inicial</textarea>
+    <!-- Botón para mostrar el valor del textarea -->
+    <button onclick="mostrarValor()">Mostrar Valor</button>
+    <!-- Botón para cambiar el valor del textarea -->
+    <button onclick="cambiarValor()">Cambiar Valor</button>
+
+    <script>
+        function mostrarValor() {
+            // Selecciona el textarea por su id
+            const textarea = document.getElementById('miTextarea');
+            // Muestra una alerta con el valor del textarea
+            alert(textarea.value);
+        }
+
+        function cambiarValor() {
+            // Selecciona el textarea por su id
+            const textarea = document.getElementById('miTextarea');
+            // Establece un nuevo valor al textarea
+            textarea.value = "Nuevo texto";
+        }
+    </script>
+</body>
+</html>
+
+//------------------------------------------
+
+<!-- Obtener y establecer el valor de un select -->
+
+<!-- un campo sector con opcion1 opcion2 opcion3 y dos btn "mostrar valor" y "cambiar valor" cuando pulso el btn mostrar valor me imprime un alert con la opcion puesta en el momento y el otro me cambia el selector a opcion3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Select</title>
+</head>
+<body>
+    <!-- Select con opciones -->
+    <select id="miSelect">
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+    </select>
+    <!-- Botón para mostrar el valor seleccionado del select -->
+    <button onclick="mostrarValor()">Mostrar Valor</button>
+    <!-- Botón para cambiar la opción seleccionada del select -->
+    <button onclick="cambiarValor()">Cambiar Valor</button>
+
+    <script>
+        function mostrarValor() {
+            // Selecciona el select por su id
+            const select = document.getElementById('miSelect');
+            // Muestra una alerta con el valor seleccionado del select
+            alert(select.value);
+        }
+
+        function cambiarValor() {
+            // Selecciona el select por su id
+            const select = document.getElementById('miSelect');
+            // Cambia la opción seleccionada del select
+            select.value = "opcion3";
+        }
+    </script>
+</body>
+</html>
+
+
+

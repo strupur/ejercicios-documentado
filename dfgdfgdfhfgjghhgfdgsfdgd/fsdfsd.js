@@ -1,1 +1,0 @@
-let gatito = 55;

@@ -3,34 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de Select</title>
+    <title>Ejemplos de innerHTML</title>
 </head>
 <body>
-    <!-- Select con opciones -->
-    <select id="miSelect">
-        <option value="opcion1">Opción 1</option>
-        <option value="opcion2">Opción 2</option>
-        <option value="opcion3">Opción 3</option>
-    </select>
-    <!-- Botón para mostrar el valor seleccionado del select -->
-    <button onclick="mostrarValor()">Mostrar Valor</button>
-    <!-- Botón para cambiar la opción seleccionada del select -->
-    <button onclick="cambiarValor()">Cambiar Valor</button>
+
+    <div id="myDiv">
+        <p>Este es un párrafo.</p>
+        <p>Este es otro párrafo.</p>
+    </div>
+
+    <div id="myListContainer">
+        <ul id="myList"></ul>
+    </div>
 
     <script>
-        function mostrarValor() {
-            // Selecciona el select por su id
-            const select = document.getElementById('miSelect');
-            // Muestra una alerta con el valor seleccionado del select
-            alert(select.value);
-        }
-
-        function cambiarValor() {
-            // Selecciona el select por su id
-            const select = document.getElementById('miSelect');
-            // Cambia la opción seleccionada del select
-            select.value = "opcion3";
-        }
+        // Ejemplo 1: Obtener el Contenido HTML
+        const myDiv = document.getElementById('myDiv');
+        const content = myDiv.innerHTML; // Obtiene el contenido HTML dentro de <div>
+        console.log('Ejemplo 1 - Contenido HTML obtenido:');
+        console.log(content); // Imprime: <p>Este es un párrafo.</p><p>Este es otro párrafo.</p>
     </script>
-</body>
-</html>
+    </body>

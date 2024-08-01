@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de innerText</title>
+</head>
+<body>
+
+    <!-- Ejemplo de un contenedor de texto -->
+    <div id="textContainer">
+        <p>Este es un párrafo.</p>
+        <p>Este es otro párrafo.</p>
+    </div>
+
+    <!-- Ejemplo de una lista -->
+    <div id="listContainer">
+        <ul id="myList"></ul>
+    </div>
+
+    <script>
+        // Ejemplo 1: Obtener el texto
+        const textContainer = document.getElementById('textContainer');
+        const textContent = textContainer.innerText; // Obtiene el texto dentro de <div>
+        console.log('Ejemplo 1 - Texto obtenido:');
+        console.log(textContent); // Imprime: "Este es un párrafo. Este es otro párrafo."
+
+        //-------------------------------------------
+
+        // Ejemplo 2: Establecer el texto
+        textContainer.innerText = 'Texto cambiado completamente.'; // Cambia el texto dentro del contenedor
+        console.log('Ejemplo 2 - Texto establecido:');
+        console.log(textContainer.innerText); // Imprime: "Texto cambiado completamente."
+
+        //-------------------------------------------
+
+        // Ejemplo 3: Añadir texto
+        textContainer.innerText += ' Añadido un nuevo texto.'; // Añade nuevo texto al contenido existente
+        console.log('Ejemplo 3 - Texto añadido:');
+        console.log(textContainer.innerText); // Imprime: "Texto cambiado completamente. Añadido un nuevo texto."
+
+        //-------------------------------------------
+
+        // Ejemplo 4: Vaciar el texto
+        textContainer.innerText = ''; // Vacía el contenido de texto del div
+        console.log('Ejemplo 4 - Texto vacío:');
+        console.log(textContainer.innerText); // Imprime: ""
+
+        //-------------------------------------------
+
+        // Ejemplo 5: Crear elementos de texto dinámicamente
+        const myList = document.getElementById('myList');
+        const items = ['Item 1', 'Item 2', 'Item 3'];
+
+        // Usar innerText para establecer el contenido de cada elemento de lista
+        items.forEach(item => {
+            const listItem = document.createElement('li'); // Crear un nuevo elemento <li>
+            listItem.innerText = item; // Establecer el texto del <li>
+            myList.appendChild(listItem); // Añadir el <li> a la lista
+        });
+
+        console.log('Ejemplo 5 - Elementos de lista creados dinámicamente:');
+        console.log(myList.innerText); // Imprime: "Item 1 Item 2 Item 3"
+    </script>
+
+</body>
+</html>

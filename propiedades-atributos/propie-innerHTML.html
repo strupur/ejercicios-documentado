@@ -1,0 +1,67 @@
+<!-- La propiedad innerHTML es muy poderosa y flexible para trabajar con el contenido de los elementos en el DOM. Sin embargo, es importante usarla con precaución ya que puede introducir vulnerabilidades de seguridad, como ataques de Cross-Site Scripting (XSS), si no se valida y se escapa correctamente el contenido dinámico. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de innerHTML</title>
+</head>
+<body>
+
+    <dive id="myDiv">
+        <p>Este es un párrafo.</p>
+        <p>Este es otro párrafo.</p>
+    </dive>
+
+    <div id="myListContainer">
+        <ul id="myList"></ul>
+    </div>
+
+    <script>
+        // Ejemplo 1: Obtener el Contenido HTML
+        const myDiv = document.getElementById('myDiv');
+        const content = myDiv.innerHTML; // Obtiene el contenido HTML dentro de <div>
+        console.log('Ejemplo 1 - Contenido HTML obtenido:');
+        console.log(content); // Imprime: <p>Este es un párrafo.</p><p>Este es otro párrafo.</p>
+
+        //-------------------------------------------
+
+        // Ejemplo 2: Establecer el Contenido HTML
+        myDiv.innerHTML = '<h1>Título cambiado</h1><p>Nuevo párrafo.</p>'; // Cambia el contenido HTML
+        console.log('Ejemplo 2 - Contenido HTML establecido:');
+        console.log(myDiv.innerHTML); // Imprime el nuevo contenido HTML
+
+        //-------------------------------------------
+
+        // Ejemplo 3: Añadir Contenido HTML
+        myDiv.innerHTML += '<p>Párrafo añadido.</p>'; // Añade un nuevo párrafo al contenido existente
+        console.log('Ejemplo 3 - Contenido HTML añadido:');
+        console.log(myDiv.innerHTML); // Imprime el contenido HTML actualizado
+
+        //-------------------------------------------
+
+        // Ejemplo 4: Vaciar el Contenido HTML
+        myDiv.innerHTML = ''; // Vacía el contenido del div
+        console.log('Ejemplo 4 - Contenido HTML vacío:');
+        console.log(myDiv.innerHTML); // Imprime el contenido HTML vacío
+
+        //-------------------------------------------
+
+        // Ejemplo 5: Crear Elementos Dinámicamente
+        const myList = document.getElementById('myList');
+        const items = ['Item 1', 'Item 2', 'Item 3'];
+
+        let listHTML = ''; // Inicializa una cadena vacía
+
+        items.forEach(item => {
+            listHTML += `<li>${item}</li>`; // Añade cada item a la cadena
+        });
+
+        myList.innerHTML = listHTML; // Establece el contenido HTML de la lista
+        console.log('Ejemplo 5 - Elementos de lista creados dinámicamente:');
+        console.log(myList.innerHTML); // Imprime el contenido HTML de la lista
+    </script>
+
+</body>
+</html>

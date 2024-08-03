@@ -1,0 +1,31 @@
+Ejercicio 1: Cambiar el Texto de un Elemento
+Enunciado:
+Crea una página con un párrafo que tenga un texto inicial. Debes agregar un botón que, al hacer clic en él, cambie el texto del párrafo a "¡Texto actualizado!".
+
+Ejercicio 2: Mostrar/Ocultar un Elemento
+Enunciado:
+Crea una página con un párrafo y un botón. Al hacer clic en el botón, el párrafo debe ocultarse si está visible, y debe mostrarse si está oculto.
+
+Ejercicio 3: Contador de Clics
+Enunciado:
+Crea una página con un botón y un párrafo que muestra un contador de clics. Cada vez que se haga clic en el botón, el contador debe incrementarse en 1 y actualizar el texto del párrafo.
+
+Ejercicio 4: Cambiar el Estilo de un Elemento
+Enunciado:
+Crea una página con un párrafo y dos botones: "Color Rojo" y "Color Azul". Al hacer clic en cada botón, el color del texto del párrafo debe cambiar al color correspondiente.
+
+Ejercicio 5: Añadir Elementos a una Lista
+Enunciado:
+Crea una página con una lista desordenada y un botón. Al hacer clic en el botón, se debe añadir un nuevo elemento a la lista con el texto "Nuevo elemento".
+
+Ejercicio 6: Mostrar un Mensaje de Bienvenida
+Enunciado:
+Crea una página con un campo de texto y un botón. Al ingresar un nombre en el campo de texto y hacer clic en el botón, se debe mostrar un mensaje de bienvenida en un párrafo, por ejemplo: "¡Hola, [nombre]!"
+
+Ejercicio 7: Cambiar Imagen al Hacer Clic
+Enunciado:
+Crea una página con una imagen y dos botones: "Imagen 1" e "Imagen 2". Al hacer clic en cada botón, la imagen debe cambiar a la imagen correspondiente.
+
+Ejercicio 8: Mostrar la Fecha y Hora Actual
+Enunciado:
+Crea una página con un párrafo y un botón. Al hacer clic en el botón, el párrafo debe mostrar la fecha y hora actual.

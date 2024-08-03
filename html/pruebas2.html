@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar/Ocultar Elemento</title>
+    <style>
+        #parrafo {
+            display: block;
+        }
+
+        .div {
+            background-color: rgb(170, 83, 83);
+            border: solid 4px
+        }
+    </style>
+</head>
+<body>
+
+<div class="div">
+    <p id="parrafo">Parrafo visible</p>
+</div>
+
+<button id="btnclick">Click</button>
+
+<script>
+    // Obtenemos referencias a los elementos del DOM
+    const parrafo = document.getElementById('parrafo');
+    const btn = document.getElementById('btnclick');
+
+    // Añadimos un event listener al botón
+    btn.addEventListener('click', function() {
+        // Comprobamos el estado actual del párrafo y lo mostramos u ocultamos
+        if (parrafo.style.display === 'none') {
+            parrafo.style.display = 'block';
+        } else {
+            parrafo.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

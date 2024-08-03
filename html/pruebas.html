@@ -1,26 +1,31 @@
+Ejemplo 3: Alternar estilo de texto (negrita)
+Este ejemplo alterna la clase bold para cambiar el estilo de texto a negrita cuando se hace clic en un botón.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alternar Negrita</title>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <p id="parrafo-init">Texto inicial</p>
+<p id="text">Este texto puede cambiar a negrita.</p>
+<button id="boldButton">Toggle Bold</button>
 
-    <button id="click">boton</button>
+<script>
+    const text = document.getElementById('text');
+    const boldButton = document.getElementById('boldButton');
 
-    <script>
-        const myParagraph = document.getElementById('parrafo-init');
+    boldButton.addEventListener('click', function() {
+        text.classList.toggle('bold');
+    });
+</script>
 
-        const botonClick = document.getElementById('click');
-
-        botonClick.addEventListener('click', function(){
-
-            myParagraph.textContent = 'Texto actualizado';
-        });
-    </script>
-    
 </body>
 </html>

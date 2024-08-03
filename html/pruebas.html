@@ -3,34 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambiar Texto de un Elemento</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        button {
-            margin-top: 10px;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <!-- Párrafo con texto inicial -->
-    <p id="myParagraph">Este es el texto inicial.</p>
-    <!-- Botón para cambiar el texto -->
-    <button id="changeTextButton">Cambiar Texto</button>
 
-    <!-- Script para manejar el evento de clic del botón -->
+    <p id="parrafo-init">Texto inicial</p>
+
+    <button id="click">boton</button>
+
     <script>
-        // Selecciona el botón y el párrafo del DOM
-        const changeTextButton = document.getElementById('changeTextButton');
-        const myParagraph = document.getElementById('myParagraph');
+        const myParagraph = document.getElementById('parrafo-init');
 
-        // Agrega un evento de clic al botón
-        changeTextButton.addEventListener('click', function() {
-            // Cambia el texto del párrafo
-            myParagraph.textContent = '¡Texto actualizado!';
+        const botonClick = document.getElementById('click');
+
+        botonClick.addEventListener('click', function(){
+
+            myParagraph.textContent = 'Texto actualizado';
         });
     </script>
+    
 </body>
 </html>

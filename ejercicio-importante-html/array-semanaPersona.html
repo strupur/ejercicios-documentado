@@ -1,0 +1,63 @@
+Un servicio de atención al ciente tiene establecido turnos semanales para sus empleados de manera que cada día de la semana se encarga del servicio  una persona: lunes - María, Martes - Luis, Miércoles - Antonia, Jueves - Pedro, Viernes - Marisa.
+
+Usa un array para almacenar los datos del servicio. En este array cada elemento será un par día - nombre.
+
+Crea una función que responda con el nombre de la persona encargada del servicio sabiendo el día. Si el día no existe deberá decir que no hay servicio. Los nombres de los días deben ir en minúsculas.
+Si le pido servicio('Lunes') me debería decir "Este día se encarga María" y si le pido servico(Miércoles") me daría Antonia.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Atención al Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Consulta de Turnos de Servicio</h1>
+    <label for="dayInput">Ingresa el día de la semana:</label>
+    <input type="text" id="dayInput" placeholder="Por ejemplo: lunes">
+    <button onclick="getServicePerson()">Consultar</button>
+
+    <div id="result"></div>
+
+    <script>
+        // Array de turnos de servicio
+        const serviceSchedule = [
+            { day: 'lunes', person: 'María' },
+            { day: 'martes', person: 'Luis' },
+            { day: 'miércoles', person: 'Antonia' },
+            { day: 'jueves', person: 'Pedro' },
+            { day: 'viernes', person: 'Marisa' }
+        ];
+
+        // Función para obtener la persona encargada del servicio
+        function getServicePerson() {
+            const dayInput = document.getElementById('dayInput').value.toLowerCase();
+            const resultDiv = document.getElementById('result');
+
+            // Buscar el día en el array
+            const service = serviceSchedule.find(item => item.day === dayInput);
+
+            // Mostrar el resultado
+            if (service) {
+                resultDiv.textContent = `Este día se encarga ${service.person}`;
+            } else {
+                resultDiv.textContent = 'No hay servicio este día';
+            }
+        }
+    </script>
+
+</body>
+</html>

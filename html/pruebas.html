@@ -1,29 +1,39 @@
-Ejemplo 3: Alternar estilo de texto (negrita)
-Este ejemplo alterna la clase bold para cambiar el estilo de texto a negrita cuando se hace clic en un botón.
+Ejemplo 4: Alternar visibilidad de un menú
+Este ejemplo alterna la clase visible para mostrar y ocultar un menú de navegación cuando se hace clic en un botón.
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alternar Negrita</title>
+    <title>Alternar Menú de Navegación</title>
     <style>
-        .bold {
-            font-weight: bold;
+        .visible {
+            display: block;
+        }
+
+        .menu {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-<p id="text">Este texto puede cambiar a negrita.</p>
-<button id="boldButton">Toggle Bold</button>
+<button id="menuButton">Toggle Menu</button>
+<nav id="menu" class="menu">
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</nav>
 
 <script>
-    const text = document.getElementById('text');
-    const boldButton = document.getElementById('boldButton');
+    const menuButton = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
 
-    boldButton.addEventListener('click', function() {
-        text.classList.toggle('bold');
+    menuButton.addEventListener('click', function() {
+        menu.classList.toggle('visible');
     });
 </script>
 

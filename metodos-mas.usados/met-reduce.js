@@ -1,9 +1,13 @@
-const numbers = [1, 2, 3, 4, 5];
+// Claro, el método reduce en JavaScript es una herramienta poderosa y flexible que se utiliza para reducir un array a un solo valor. Esto se puede lograr aplicando una función acumulativa a cada elemento del array, de izquierda a derecha. La función acumulativa toma dos argumentos: el acumulador y el valor actual.
 
-// Sumar todos los números en el array
-const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+const numeros = [1, 2, 3, 4, 5];
 
-console.log(sum); // Salida: 15
+const suma = numeros.reduce((acumulador, valorActual) => {
+    return acumulador + valorActual;
+}, 0);
+
+console.log(suma); // Salida: 15
+
 
 // ---------------------------
 
